@@ -1,10 +1,9 @@
-"""Github release version get."""
 # !/usr/bin/env python3
 import json
 import subprocess
 
 
-def get_last_version() -> str:
+def get_last_version():
     """Return the version number of the last release."""
     json_string = (
         subprocess.run(
@@ -20,7 +19,7 @@ def get_last_version() -> str:
     return json.loads(json_string)["tagName"]
 
 
-def bump_patch_number(version_number: str) -> str:
+def bump_patch_number(version_number):
     """Return a copy of `version_number` with the patch number incremented."""
     major, minor, patch = version_number.split(".")
     return f"{major}.{minor}.{int(patch) + 1}"
