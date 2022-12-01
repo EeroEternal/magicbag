@@ -16,6 +16,7 @@ dependencies = []
 description = 'python tool package'
 name = 'magicbag'
 readme = "README.md"
+dynamic = ["version"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/lipicoder/magicbag/issues"
