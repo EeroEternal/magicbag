@@ -44,7 +44,7 @@ def get_config():
     cfg = VersioneerConfig()
     cfg.VCS = "git"
     cfg.style = "pep440"
-    cfg.tag_prefix = "v"
+    cfg.tag_prefix = ""
     cfg.parentdir_prefix = "magicbag-"
     cfg.versionfile_source = "src/magicbag/_version.py"
     cfg.verbose = False
@@ -261,9 +261,6 @@ def git_pieces_from_vcs(tag_prefix, root, verbose, runner=run_command):
         "describe", "--tags", "--dirty", "--always", "--long",
         "--match", f"{tag_prefix}[[:digit:]]*"
     ], cwd=root)
-    print(f'describe_out: {describe_out}')
-    print(f'rc: {rc}')
-
     # --long was added in git-1.5.5
     if describe_out is None:
         raise NotThisMethod("'git describe' failed")
@@ -645,14 +642,11 @@ def get_versions():
                 "date": None}
 
     try:
-        # print(f'tag prefix:{cfg.tag_prefix}')
         pieces = git_pieces_from_vcs(cfg.tag_prefix, root, verbose)
-        # print(f"pieces: {pieces}")
         return render(pieces, cfg.style)
     except NotThisMethod:
         pass
 
-    print(f'cfg parent dir:{cfg.parentdir_prefix}')
     try:
         if cfg.parentdir_prefix:
             return versions_from_parentdir(cfg.parentdir_prefix, root, verbose)

@@ -10,10 +10,11 @@ VCS = "git"
 style = "pep440"
 versionfile_source = "src/magicbag/_version.py"
 versionfile_build = "magicbag/_version.py"
-tag_prefix = "v"
+tag_prefix = ""
 parentdir_prefix = "magicbag-"
 ```
 check source and build directory carefully
+check tag_prefix not "v"
 
 
 ### setup.py config
