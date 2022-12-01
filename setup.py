@@ -9,7 +9,7 @@ requires = []
 
 setup(
     name="magicbag",
-    version="0.0.6",
+    version="0.0.1",
     url="https://github.com/lipicoder/magicbag",
     license="MIT License",
     author="lipi",
