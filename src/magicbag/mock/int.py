@@ -3,7 +3,7 @@
 import random
 
 
-def random_int(fix_length):
+def random_fixed_int(length):
     """Generate fix length random int.
 
     Args:
@@ -11,4 +11,4 @@ def random_int(fix_length):
     Return:
         (int): random int
     """
-    return random.randint(10 ** (fix_length - 1), 10**fix_length - 1)
+    return random.randint(10 ** (length - 1), 10**length - 1)

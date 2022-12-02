@@ -5,7 +5,7 @@ from .mock import (
     random_date,
     random_datetime,
     random_decimal,
-    random_int,
+    random_fixed_int,
     random_timestamp,
 )
 
@@ -15,7 +15,7 @@ __all__ = [
     "random_datetime",
     "random_timestamp",
     "random_decimal",
-    "random_int",
+    "random_fixed_int",
 ]
 
 from . import _version
