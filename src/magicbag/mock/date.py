@@ -32,7 +32,6 @@ def random_datetime(start_year=1970, end_year=2021, timezone="UTC"):
         (datatime.datetime): datetime.datetime object
     """
     timezone = pytz.timezone(timezone)
-    print("timezone:", timezone)
 
     return datetime(
         random.randint(start_year, end_year),
