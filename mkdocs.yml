@@ -1,2 +1,8 @@
 site_name: Magicbag - Python useful tools library
 docs_dir: doc
+site_url: https://lipicoder.github.io/
+repo_url: https://github.com/lipicoder/magicbag
+edit_uri: edit/main/doc
+theme: gitbook
+nav:
+  - Magicbag Intro: index.md
