@@ -1,8 +1,8 @@
-<p style="text-align: center"><img src="https://storage.googleapis.com/resource-cdn/magicbaglogo.png" 
+<p style="text-align: center"><img src="https://storage.googleapis.com/resource-cdn/magicbaglogo.png" alt="magicbaglogo" 
 width=200></p>
 
 <p>
-    <a href="https://pypi.org/project/magicbag/" alt="PyPI version">
+    <a href="https://pypi.org/project/magicbag/">
         <img alt="PyPI" src="https://img.shields.io/badge/0.0.19-pypi-blue"></a>
 </p>
 
@@ -16,4 +16,4 @@ tool library
 
 **Make your main code base simpler**
 
-##  
+##       
