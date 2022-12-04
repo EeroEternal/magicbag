@@ -6,3 +6,9 @@ edit_uri: edit/main/doc
 theme: gitbook
 nav:
   - Magicbag Intro: index.md
+  - Mock reference:
+      - mock: mock.md
+
+plugins:
+  - search
+  - mkdocstrings
