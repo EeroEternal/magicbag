@@ -2,5 +2,8 @@
 
 ::: src.magicbag.mock
 :members:
-:undoc-members:
-:show-inheritance:
+
+- date
+- decimal
+- int
+- time

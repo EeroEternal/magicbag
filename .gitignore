@@ -1,9 +1,6 @@
 # DS_Store
 .DS_Store
 
-# Sphinx docs
-docs/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -124,7 +121,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+/site/
 
 # mypy
 .mypy_cache/

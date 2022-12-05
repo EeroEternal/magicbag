@@ -1,6 +1,6 @@
 """Magicbag init file."""
 
-from .check import prefix_check
+from magicbag.string.check import prefix_check
 from .mock import (
     random_date,
     random_datetime,

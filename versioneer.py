@@ -1,4 +1,3 @@
-
 # Version: 0.28
 
 """The Versioneer - like a rocketeer, but for versions.
@@ -80,7 +79,7 @@ tag. Some projects use tag names that include more than just the version
 string (e.g. "myproject-1.2" instead of just "1.2"), in which case the tool
 needs to strip the tag prefix to extract the version identifier. For
 unreleased software (between tags), the version identifier should provide
-enough information to help developers recreate the same tree, while also
+enough information to docs developers recreate the same tree, while also
 giving them an idea of roughly how old the tree is (after version 1.2, before
 version 1.3). Many VCS systems can report a description that captures this,
 for example `git describe --tags --dirty --always` reports things like
@@ -185,7 +184,7 @@ Versioneer tries to avoid fatal errors: if something goes wrong, it will tend
 to return a version of "0+unknown". To investigate the problem, run `setup.py
 version`, which will run the version-lookup code in a verbose mode, and will
 display the full contents of `get_versions()` (including the `error` string,
-which may help identify what went wrong).
+which may docs identify what went wrong).
 
 ## Known Limitations
 
@@ -310,6 +309,7 @@ https://img.shields.io/travis/com/python-versioneer/python-versioneer.svg
 
 import configparser
 import errno
+import functools
 import json
 import os
 import re
@@ -317,7 +317,6 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Callable, Dict
-import functools
 
 have_tomllib = True
 if sys.version_info >= (3, 11):
@@ -421,10 +420,12 @@ HANDLERS: Dict[str, Dict[str, Callable]] = {}
 
 def register_vcs_handler(vcs, method):  # decorator
     """Create decorator to mark a method as the handler of a VCS."""
+
     def decorate(f):
         """Store f in HANDLERS[vcs][method]."""
         HANDLERS.setdefault(vcs, {})[method] = f
         return f
+
     return decorate
 
 
@@ -1845,6 +1846,7 @@ def get_cmdclass(cmdclass=None):
             print(" date: %s" % vers.get("date"))
             if vers["error"]:
                 print(" error: %s" % vers["error"])
+
     cmds["version"] = cmd_version
 
     # we override "build_py" in setuptools
@@ -1888,6 +1890,7 @@ def get_cmdclass(cmdclass=None):
                                                   cfg.versionfile_build)
                 print("UPDATING %s" % target_versionfile)
                 write_to_version_file(target_versionfile, versions)
+
     cmds["build_py"] = cmd_build_py
 
     if 'build_ext' in cmds:
@@ -1920,6 +1923,7 @@ def get_cmdclass(cmdclass=None):
                 return
             print("UPDATING %s" % target_versionfile)
             write_to_version_file(target_versionfile, versions)
+
     cmds["build_ext"] = cmd_build_ext
 
     if "cx_Freeze" in sys.modules:  # cx_freeze enabled?
@@ -1951,6 +1955,7 @@ def get_cmdclass(cmdclass=None):
                              "PARENTDIR_PREFIX": cfg.parentdir_prefix,
                              "VERSIONFILE_SOURCE": cfg.versionfile_source,
                              })
+
         cmds["build_exe"] = cmd_build_exe
         del cmds["build_py"]
 
@@ -1980,6 +1985,7 @@ def get_cmdclass(cmdclass=None):
                              "PARENTDIR_PREFIX": cfg.parentdir_prefix,
                              "VERSIONFILE_SOURCE": cfg.versionfile_source,
                              })
+
         cmds["py2exe"] = cmd_py2exe
 
     # sdist farms its file list building out to egg_info
@@ -2045,6 +2051,7 @@ def get_cmdclass(cmdclass=None):
             print("UPDATING %s" % target_versionfile)
             write_to_version_file(target_versionfile,
                                   self._versioneer_generated_versions)
+
     cmds["sdist"] = cmd_sdist
 
     return cmds

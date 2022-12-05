@@ -1,9 +1,11 @@
 # Development records
 
 ## versioneer install
+
 [python versioneer](https://github.com/python-versioneer/python-versioneer)
 
 ### pyproject config
+
 ```toml
 [tool.versioneer]
 VCS = "git"
@@ -13,11 +15,12 @@ versionfile_build = "magicbag/_version.py"
 tag_prefix = ""
 parentdir_prefix = "magicbag-"
 ```
+
 check source and build directory carefully
 check tag_prefix not "v"
 
-
 ### setup.py config
+
 ```python
 setup(
     name="magicbag",
@@ -33,6 +36,13 @@ setup(
 ```
 
 ### create _version.py
+
 ```bash
 versioneer install --vendor
+```
+
+### upload magicbag to github page
+
+```bash
+git subtree push --prefix magicbag origin gh-pages
 ```

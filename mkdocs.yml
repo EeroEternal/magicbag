@@ -1,14 +1,14 @@
 site_name: Magicbag - Python useful tools library
-docs_dir: doc
+docs_dir: markdown
 site_url: https://lipicoder.github.io/
 repo_url: https://github.com/lipicoder/magicbag
-edit_uri: edit/main/doc
+edit_uri: edit/main/markdown
 theme: gitbook
 nav:
   - Magicbag Intro: index.md
-  - Mock reference:
+  - Library Reference:
       - mock: mock.md
+      - string: string.md
 
 plugins:
-  - search
   - mkdocstrings
